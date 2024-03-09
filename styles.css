@@ -1,0 +1,20 @@
+header{
+    color:rgb(133, 38, 10);
+    margin-left:auto;
+    margin-right:auto;
+    padding:20px;
+    text-align:center;
+    font-size:30px;
+    width:400px;
+
+}
+main{
+    color:rgba(2, 2, 2, 0.779);
+    margin:20px auto;
+    border-radius: 10px;
+    font-style: italic;
+    font-size:20px;
+    width:400px;
+    padding:20px;
+    background-color: rgb(249, 243, 230);
+}
