@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Icon Grid</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-kdRZbSwWeM1SfS+PH7/eUM2r6KHTEm2GA1dH+laTms2p2MoklVlkuGGT07LjFUEmO/jS9X+8RXgex35se2DAfw==" crossorigin="anonymous" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #c5d8ee;
+    }
+
+    header {
+      background-color: #121039;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .grid-item {
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: center;
+      background-color: #f9f9f8f6;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .question-box {
+      background-color: #f9f9f9;
+      padding: 15px;
+      margin-top: 20px;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .answer-box {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Services</h1>
+  </header>
+
+  <div class="grid-container">
+    <div class="grid-item">
+      <i class="fas fa-certificate icon"></i>
+      <p>Birth Certificate</p>
+    </div>
+    <div class="grid-item">
+      <i class="fas fa-certificate icon"></i>
+      <p> Marriage Certificate</p>
+    </div>
+    <div class="grid-item">
+      <i class="fas fa-certificate icon"></i>
+      <p>Land Registration</p>
+    </div>
+    <div class="grid-item">
+      <i class="fas fa-id-card icon"></i>
+      <p>Caste Certificate</p>
+    </div>
+    <div class="grid-item">
+      <i class="fas fa-id-card icon"></i>
+      <p>Building Tax</p>
+    </div>
+    <div class="grid-item">
+      <i class="fas fa-id-card icon"></i>
+      <p>Other</p>
+    </div>
+    <!-- Add more grid items as needed -->
+  </div>
+
+  <div class="question-box">
+    <h2>Ask Anything</h2>
+    <textarea rows="4" cols="50" placeholder="Type your question here..."></textarea>
+    <br>
+    <button onclick="askQuestion()">Ask Question</button>
+  </div>
+
+  <div class="answer-box">
+    <h2>Answer Questions</h2>
+    <div id="answerList"></div>
+  </div>
+
+  <script>
+    function askQuestion() {
+      var question = document.querySelector('.question-box textarea').value;
+      if (question.trim() !== '') {
+        var answerList = document.getElementById('answerList');
+        var questionElement = document.createElement('div');
+        questionElement.innerHTML = '<strong>Question:</strong> ' + question;
+        answerList.appendChild(questionElement);
+        document.querySelector('.question-box textarea').value = '';
+      } else {
+        alert('Please enter a valid question.');
+      }
+    }
+  </script>
+
+</body>
+</html>
